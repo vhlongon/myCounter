@@ -1,3 +1,4 @@
+import {combineReducers} from 'redux';
 const reducer = (state = 0, action) => { //duh...
   switch (action.type) {
     case 'INCREMENT':
@@ -11,10 +12,10 @@ const reducer = (state = 0, action) => { //duh...
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWTODO':
-      return; //figure out
+      return state; //figure out
     default:
       return state; //do nothing
   }
 }
-
-export default reducer;
+const allReducers = combineReducers(newToDoReducer, reducer);
+export default allReducers;
