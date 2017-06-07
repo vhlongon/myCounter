@@ -1,11 +1,9 @@
 import React from 'react';
 
-const App = ({Counters, addCounter, value}) => (
+const App = ({counters, onNewToDo, value}) => (
   <div>
     <button onClick={addCounter}>Add Counter</button>
-    Counters.map((id) =>
-      
-    );
+
   </div>
 )
 

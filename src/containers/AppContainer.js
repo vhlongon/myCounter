@@ -2,14 +2,15 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-  	value: state
+  	value: state,
+    counters: state.counters
   }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onNewToDo: () => dispatch({type: 'NEWTODO'})
+    onNewToDo: (id) => dispatch({type: 'NEWTODO', id})
   }
 }
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)
