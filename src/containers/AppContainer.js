@@ -1,3 +1,5 @@
+import {connect} from 'react-redux';
+
 const mapStateToProps = (state) => {
   return {
   	value: state
@@ -7,8 +9,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onNewToDo: () => dispatch({type: 'newToDo'})
+    onNewToDo: () => dispatch({type: 'NEWTODO'})
   }
 }
-const appContainer
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)
+
 export default AppContainer;

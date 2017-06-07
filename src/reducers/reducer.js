@@ -8,5 +8,13 @@ const reducer = (state = 0, action) => { //duh...
       return state;
   }
 }
+const newToDoReducer = (state = {}, action) {
+  switch(action.type) {
+    case 'NEWTODO':
+      return; 
+    default:
+      return state;
+  }
+}
 
 export default reducer;
