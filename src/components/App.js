@@ -2,8 +2,8 @@ import React from 'react';
 
 const App = ({counters, onNewToDo, value}) => (
   <div>
-    <button onClick={addCounter}>Add Counter</button>
-
+    <button onClick={onNewToDo}>Add Counter</button>
+  {/*map through here*/}
   </div>
 )
 
