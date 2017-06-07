@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
 	};
 }
 
-const Final = connect(mapStateToProps, mapDispatchToProps)(App);
+const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(App);
 //react-redux automatically makes a container, this is the cool-kid way.
 
-export default Final
+export default CounterContainer;
