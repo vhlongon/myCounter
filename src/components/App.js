@@ -1,8 +1,8 @@
 import React from 'react';
 
-const App = ({Counters}) => (
+const App = ({Counters, addCounter}) => (
   <div>
-
+    <button onClick={addCounter}>Add Counter</button>
   </div>
 )
 
