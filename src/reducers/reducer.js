@@ -8,12 +8,12 @@ const reducer = (state = 0, action) => { //duh...
       return state;
   }
 }
-const newToDoReducer = (state = {}, action) {
+const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWTODO':
-      return; 
+      return; //figure out
     default:
-      return state;
+      return state; //do nothing
   }
 }
 
