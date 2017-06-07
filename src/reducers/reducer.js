@@ -7,6 +7,6 @@ const reducer = (state = 0, action) => { //duh...
     default:
       return state;
   }
-}
+} //hi
 
 export default reducer;
