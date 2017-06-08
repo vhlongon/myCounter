@@ -15,7 +15,9 @@ const reducer = (state = 0, action) => { //duh...
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWTODO':
-      return state; //figure out
+      return Object.assign({}, state, {
+        
+      })
     default:
       return state; //do nothing
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App = ({counters, onNewToDo, value}) => (
+const App = ({counters, onNewToDo}) => (
   <div>
     <button onClick={onNewToDo}>Add Counter</button>
   {/*map through here*/}

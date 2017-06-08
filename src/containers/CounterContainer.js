@@ -1,18 +1,16 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
 //gives you component the redux state.
-const mapStateToProps = (state) => {
 
-}
 //gives component function on how to dispatch.
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIncrement: () => dispatch({type: 'INCREMENT'}),
-		onDecrement: () => dispatch({type: 'DECREMENT'})
-	};
+		onIncrement: (id) => dispatch({type: 'INCREMENT', id}),
+		onDecrement: (id) => dispatch({type: 'DECREMENT', id})
+	}
 }
 
-const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+const CounterContainer = connect(null, mapDispatchToProps)(App);
 //react-redux automatically makes a container, this is the cool-kid way
 
 export default CounterContainer;
