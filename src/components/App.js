@@ -3,7 +3,7 @@ import React from 'react';
 const App = ({counters, onNewToDo}) => (
   <div>
     <button onClick={onNewToDo}>Add Counter</button>
-  {/*map through here*/}
+  {/*counters are not yet being displayed*/}
   </div>
 )
 
