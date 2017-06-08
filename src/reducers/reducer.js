@@ -16,13 +16,13 @@ const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWTODO':
       return Object.assign({}, state, {
-        
+
       })
     default:
       return state; //do nothing
   }
 }
 
-const allReducers = combineReducers(newToDoReducer, reducer);
+const allReducers = combineReducers({newToDoReducer, reducer});
 
 export default allReducers;
