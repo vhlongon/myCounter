@@ -1,12 +1,12 @@
 import React from 'react';
-
-const App = ({counters, onNewToDo}) => (
+import Counter from './Counter';
+const App = ({counters=[], onNewToDo}) => (
   <div>
     <button onClick={onNewToDo}>Add Counter</button>
-    {counters.map(counter) =>
-      <Counter {/*id={counter.id} value={counter.value*/}/>
-    }
-  {/*counters are not yet being displayed, fix this!, probably by using counters.map*/}
+    {counters.map(counter =>
+      <Counter />
+    )}
+
   </div>
 )
 

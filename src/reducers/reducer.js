@@ -12,7 +12,7 @@ const reducer = (state = 0, action) => {
 }
 
 
-const newToDoReducer = (state = {}, action) => {
+const newCounterReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWCOUNTER':
       return Object.assign({}, state, {
@@ -29,6 +29,6 @@ const newToDoReducer = (state = {}, action) => {
   }
 }
 
-const allReducers = combineReducers({newToDoReducer, reducer});
+const allReducers = combineReducers({newCounterReducer, reducer});
 
 export default allReducers;
