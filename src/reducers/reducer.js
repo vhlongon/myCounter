@@ -11,12 +11,14 @@ const reducer = (state = 0, action) => {
   }
 }
 
-
+let nextId = 0;
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
-    case 'NEWTODO':
+    case 'NEWCOUNTER':
       return Object.assign({}, state, {
-      //fill in the blank.
+        id: nextId,
+        count: 0
+        //hopefully creates new object inside of object.
       })
     default:
       return state; //do nothing
