@@ -15,10 +15,15 @@ let nextId = 0;
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWCOUNTER':
+      nextId++;
       return Object.assign({}, state, {
-        id: nextId,
-        count: 0
-        //hopefully creates new object inside of object.
+        counters: [
+          ...state.counters,
+          {
+            id: nextId,
+            value: 0
+          }
+        ]
       })
     default:
       return state; //do nothing
