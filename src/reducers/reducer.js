@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-const reducer = (state = 0, action) => { //duh...
+const reducer = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
@@ -9,14 +9,14 @@ const reducer = (state = 0, action) => { //duh...
     default:
       return state;
   }
-} //hi
+}
 
 
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWTODO':
       return Object.assign({}, state, {
-
+      //fill in the blank.
       })
     default:
       return state; //do nothing
