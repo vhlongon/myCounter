@@ -3,24 +3,23 @@ import {combineReducers} from 'redux';
 const reducer = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1;
+      return state.value + 1; //or state + 1? or object.assign({},state, {value + 1})
     case 'DECREMENT':
-      return state - 1;
+      return state.value - 1; //or state - 1?
     default:
       return state;
   }
 }
 
-let nextId = 0;
+
 const newToDoReducer = (state = {}, action) => {
   switch(action.type) {
     case 'NEWCOUNTER':
-      nextId++;
       return Object.assign({}, state, {
         counters: [
           ...state.counters,
           {
-            id: nextId,
+            id: action.id,
             value: 0
           }
         ]
