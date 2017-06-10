@@ -1,12 +1,13 @@
 import React from 'react';
+import Counter from './Counter';
+const App = ({counters=[], onNewToDo}) => (
+  <div>
+    <button onClick={onNewToDo}>Add Counter</button>
+    {counters.map(counter =>
+      <Counter />
+    )}
 
-const App = ({ value, onIncrement, onDecrement}) => (
-	<div className="counter">
-		<h1>{value}</h1>
-		<button onClick={onIncrement}>+</button>
-		<button onClick={onDecrement}>-</button>
-	</div>
+  </div>
 )
 
 export default App;
-//check
