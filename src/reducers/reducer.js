@@ -1,20 +1,20 @@
 import {combineReducers} from 'redux';
 
-/*const initialState = {
+const initialState = {
   counters: [
     {
       id: 0,
       value: 0
     }
   ]
-}*/
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
-      return state.value + 1; //or state + 1? or object.assign({},state, {value + 1})
+      return state.value + 1;  //or state + 1? or object.assign({},state, {value + 1})
     case 'DECREMENT':
-      return state.value - 1; //or state - 1?
+      return state.value - 1;  //or state - 1?
     default:
       return state;
   }
@@ -41,3 +41,4 @@ const newCounterReducer = (state = initialState, action) => {
 const allReducers = combineReducers({newCounterReducer, reducer});
 
 export default allReducers;
+ 
