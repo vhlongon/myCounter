@@ -35,9 +35,8 @@ const newCounterReducer = (state = initialState, action) => {
           }
         ]
       })
-
     default:
-      console.log("newCounterReducer default triggered"); //is triggered 3 times at startup
+      console.log(state, state.counters, state.counters[0].id); //is triggered 3 times at startup, returns 0 as id
       return state; //do nothing
   }
 }
