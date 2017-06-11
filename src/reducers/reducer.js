@@ -9,7 +9,8 @@ const initialState = {
   ]
 }
 
-const reducer = (state = initialState, action) => {
+//even though this reducer doesn't work, it should still not effect adding a todo
+const reducer = (state = initialState, action) => { //doesn't work
   switch (action.type) {
     case 'INCREMENT':
       return state.value + 1;  //but there is more than 1 counter
