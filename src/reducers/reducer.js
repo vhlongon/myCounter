@@ -1,13 +1,6 @@
 import {combineReducers} from 'redux';
 
-const initialState = {
-  counters: [
-    {
-      id: 0,
-      value: 0
-    }
-  ]
-}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
