@@ -35,7 +35,8 @@ const reducer = (state = initialState, action) => {  //finally a new object is b
 const newCounterReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'NEWCOUNTER':
-      console.log("newCounterReducer triggered" + state); //works
+      console.log("test" + [{},{}])
+      console.log("newCounterReducer triggered" + state);
       return [
         ...state,
         {
