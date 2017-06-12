@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import App from '../components/App';
 
 const mapStateToProps = (state) => ({
-  counters: state.counters //counters is all the counters in the state
+  counters: state.cosfljs//...still works same as counters: state.counters
 })
 
 

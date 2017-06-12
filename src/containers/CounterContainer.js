@@ -4,9 +4,9 @@ import Counter from '../components/Counter';
 //gives you component the redux state.
 const mapStateToProps = (state) => {
 	return {
-		value: state[0].value
+		value: state.value
 	}
-
+}
 //gives component function on how to dispatch.
 const mapDispatchToProps = (dispatch) => {
 	return {
@@ -15,5 +15,6 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(Counter);
+const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(Counter);
 //react-redux automatically makes a container, this is the cool-kid way
+export default CounterContainer;
