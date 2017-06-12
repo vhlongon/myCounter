@@ -8,13 +8,29 @@ const initialState = [
 ];
 
 
-//even though this reducer doesn't work, it should still not effect adding a counter
-const reducer = (state = initialState, action) => { //doesn't work
+
+const reducer = (state = initialState, action) => {  //finally a new object is being added!
   switch (action.type) {
     case 'INCREMENT':
-      //return state.value + 1;
+      return state.map(counter => {
+        if(counter.id !== action.id) {
+          return counter;
+        }
+        return { //hopefully returns new object INSIDE of state.
+          ...counter,
+          value: counter.value - 1
+        }
+      });
     case 'DECREMENT':
-      //return state.value - 1;
+      return state.map(counter => {
+        if(counter.id !== action.id) {
+          return counter;
+        }
+        return {
+          ...counter,
+          value: counter.value - 1
+        }
+    });
     default:
       return state;
   }
@@ -33,7 +49,7 @@ const newCounterReducer = (state = initialState, action) => {
         }
       ]
     default:
-      console.log(state, state.counters, state.counters[0].id); //is triggered 3 times at startup, returns 0 as id
+      console.log(state, state[0]); //is triggered 3 times at startup, returns 0 as id
       return state; //do nothing
   }
 }
