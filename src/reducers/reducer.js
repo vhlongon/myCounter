@@ -3,27 +3,31 @@ import {combineReducers} from 'redux';
 const initialState = [{ id: 0,value: 0 }]
 
 
-
-const reducer = (state = initialState, action) => {  //finally a new object is being added!
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state.map(counter => {
-        if(counter.id !== action.id) {
-          return counter;
+        if(counter.id === action.id) {
+          return {
+            ...counter,
+            value: counter.value + 1
+          }
         }
-        return { //hopefully returns new object INSIDE of one array.
-          ...counter,
-          value: counter.value - 1
+        else {
+          return counter;
         }
       });
+
     case 'DECREMENT':
       return state.map(counter => {
-        if(counter.id !== action.id) {
-          return counter;
+        if(counter.id === action.id) {
+          return {
+            ...counter,
+            value: counter.value - 1
+          }
         }
-        return {
-          ...counter,
-          value: counter.value - 1
+        else {
+          return counter;
         }
     });
     default:
@@ -35,20 +39,16 @@ const reducer = (state = initialState, action) => {  //finally a new object is b
 const newCounterReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'NEWCOUNTER':
+     //tests
       for(var name in state) {
         console.log(name);
       }
       console.log("test" + [{},{}])
       console.log("newCounterReducer triggered" + state);
-      return [
-        ...state,
-        {
-          id: action.id,
-          value: 0
-        }
-      ]
+      //end of tests
+      return [...state, { id: initialState.length++/*or just a number that incs*/, value: 0 }];
     default:
-      console.log(state, state[0]); //is triggered 3 times at startup, returns 0 as id
+      console.log(state, state[0]);
       return state; //do nothing
   }
 }
