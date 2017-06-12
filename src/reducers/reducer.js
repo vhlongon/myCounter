@@ -1,11 +1,6 @@
 import {combineReducers} from 'redux';
 
-const initialState = [
-  {
-    id: 0,
-    value: 0
-  }
-];
+const initialState = [{ id: 0,value: 0 }]
 
 
 
