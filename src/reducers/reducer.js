@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {  //finally a new object is b
         if(counter.id !== action.id) {
           return counter;
         }
-        return { //hopefully returns new object INSIDE of state.
+        return { //hopefully returns new object INSIDE of one array.
           ...counter,
           value: counter.value - 1
         }
