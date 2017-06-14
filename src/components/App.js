@@ -2,15 +2,11 @@ import React from 'react';
 import CounterContainer from '../containers/CounterContainer';
 //import Counter from './Counter';
 
-const App = ({
-  counters={
-  counterList:[
-    {id: 494, value: 10},
-  ]}, onNewToDo}) => (
+const App = ({counters, onNewToDo}) => (
   <div>
     <button onClick={onNewToDo}>Add Counter</button>
-    {counters.counterList.map((counter, id) =>
-      <CounterContainer key={id} />
+    {counters.counterList.map(counter =>
+      <CounterContainer key={counter.id} id={counter.id} value={counter.value} />
     )}
     {/*or is it just supposed to render a counter*/}
   </div>

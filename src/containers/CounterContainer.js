@@ -9,6 +9,6 @@ import Counter from '../components/Counter';
     }
   }
 
-
 const CounterContainer = connect(null, mapDispatchToProps)(Counter);
+
 export default CounterContainer;
