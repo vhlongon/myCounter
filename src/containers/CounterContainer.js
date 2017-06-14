@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 //gives component function on how to dispatch.
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIncrement: (id) => dispatch({type: 'INCREMENT', id}), //gives function to components.
-		onDecrement: (id) => dispatch({type: 'DECREMENT', id}) //^
+		onIncrement: (id) => dispatch({type: 'INCREMENT', id}), 
+		onDecrement: (id) => dispatch({type: 'DECREMENT', id})
 	}
 }
 
