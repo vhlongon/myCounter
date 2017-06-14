@@ -40,14 +40,14 @@ const reducer = (state = initialState, action) => {
           if(counter.id === action.id) {
             return {
               ...counter,
-              value: counter.value + 1
+              value: counter.value - 1
             }
           }
           else {
             return counter;
           }
         })
-      }
+      };
       default:
         return state;
   }
