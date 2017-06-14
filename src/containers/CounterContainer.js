@@ -4,13 +4,13 @@ import Counter from '../components/Counter';
 //gives you component the redux state.
 const mapStateToProps = (state) => {
 	return {
-		value: state.value
+		value: state.reducer.value
 	}
 }
 //gives component function on how to dispatch.
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onIncrement: (id) => dispatch({type: 'INCREMENT', id}), 
+		onIncrement: (id) => dispatch({type: 'INCREMENT', id}),
 		onDecrement: (id) => dispatch({type: 'DECREMENT', id})
 	}
 }

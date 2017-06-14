@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import App from '../components/App';
 
 const mapStateToProps = (state) => ({
-  counters: state.counters //...still works same as counters: state.counters
+  counters: state.newCounterReducer.counters //...still works same as counters: state.counters
 })
 
 
