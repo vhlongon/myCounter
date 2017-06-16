@@ -5,7 +5,8 @@ import Counter from '../components/Counter';
   const mapDispatchToProps = (dispatch) => {
   	return {
       onIncrement: (id) => dispatch({type: 'INCREMENT', id}),
-      onDecrement: (id) => dispatch({type: 'DECREMENT', id})
+      onDecrement: (id) => dispatch({type: 'DECREMENT', id}),
+      onClear: (id) => dispatch({type: 'CLEAR', id})
     }
   }
 
