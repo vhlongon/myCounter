@@ -1,11 +1,9 @@
 import {connect} from 'react-redux';
 import App from '../components/App';
-const count = 0;
+
 const mapStateToProps = (state) => ({
   counters: state.counters,
-  allValue: state.counters.counterList.map(counter => {
-    return parseInt(count) + parseInt(counter.value)
-  })
+  allValue: state.counters.counterList.reduce((value, counter) => value + counter.value, 0)
 })
 
 
