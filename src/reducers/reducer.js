@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-
+//next feature, h1 stating total of all
 const initialState = {
   counterList: [
     { id: 0, value: 0 }
@@ -14,8 +14,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         counterList: [
           ...state.counterList,
-          {id: state.counterList.length, value: 0}
-         ]
+          {
+            id: state.counterList.length,
+            value: 0
+          }
+        ]
        }
     case 'INCREMENT':
       return {
