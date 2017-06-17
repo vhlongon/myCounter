@@ -10,5 +10,4 @@ const Counter = ({onIncrement, onDecrement, onClear, id, value}) => (
 		<button onClick={() => onClear(id)}>clear</button>
   </div>
 )
-
 export default Counter;
