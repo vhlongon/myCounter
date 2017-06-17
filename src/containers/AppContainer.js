@@ -4,7 +4,7 @@ const count = 0;
 const mapStateToProps = (state) => ({
   counters: state.counters,
   allValue: state.counters.counterList.map(counter => {
-    return count + counter.value
+    return parseInt(count) + parseInt(counter.value)
   })
 })
 
