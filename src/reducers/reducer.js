@@ -7,19 +7,6 @@ const initialState = {
 }
 
 
-
-
-/*
-*inc dec and clear each have the same thing, return ...state, counterlist.map if
-*counter.id etc, besides for what difference we return
-*what if we used a function inside of the return (see line 29/30) since that is
-*the only unique thing
-*/
-
-
-
-
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'NEWCOUNTER':
@@ -61,22 +48,6 @@ const reducer = (state = initialState, action) => {
           }
         })
       };
-
-    case 'CLEAR':
-      return {
-        ...state,
-        counterList: state.counterList.map(counter => {
-          if(counter.id === action.id) {
-            return {
-              ...counter,
-              value: 0
-            }
-          }
-          else {
-            return counter;
-          }
-        })
-      }
       default:
         return state;
   }
@@ -84,7 +55,7 @@ const reducer = (state = initialState, action) => {
 
 
 const allReducers = combineReducers({
-  counters: reducer//counters refers to the part of the state the reducer manages
+  counters: reducer
 });
 
 export default allReducers;
