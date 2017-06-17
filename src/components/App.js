@@ -8,7 +8,7 @@ const App = ({counters, onNewToDo}) => (
     {counters.counterList.map(counter =>
       <CounterContainer key={counter.id} id={counter.id} value={counter.value} />
     )}
-    {/*or is it just supposed to render a counter*/}
+
   </div>
 )
 
