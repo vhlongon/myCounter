@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
             return counter;
           }
         })
-      };
+      }
 
     case 'DECREMENT':
       return {
@@ -47,15 +47,30 @@ const reducer = (state = initialState, action) => {
             return counter;
           }
         })
-      };
-      default:
-        return state;
+      }
+    case 'CLEAR':
+      return {
+        ...state,
+        counterList: state.counterList.map(counter => {
+          if(counter.id === action.id) {
+            return {
+              ...counter,
+              value: 0
+            }
+          }
+          else {
+            return counter;
+          }
+        })
+      }
+    default:
+      return state;
   }
 }
 
 
 const allReducers = combineReducers({
   counters: reducer
-});
+})
 
 export default allReducers;
