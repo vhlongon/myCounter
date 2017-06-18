@@ -1,14 +1,24 @@
 import React from 'react';
 
-
-
 const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
+	let input = 0;
 	return (
 		<div className="counter">
 			<h2>{value}</h2>
-			<button onClick={() => onIncrement(id)}>+</button>
-			<button onClick={() => onDecrement(id)}>-</button>
+			<button onClick={() => onIncrement(id, 1)}>+</button>
+			<button onClick={() => onDecrement(id, 1)}>-</button>
 			<button onClick={() => onClear(id)}>clear</button>
+			<form onSubmit={function(e) {
+				e.preventDefault()
+        //if (!input.value.trim()) {
+          //return;
+        //}
+        onIncrement(id, input.value)
+        input.value = 0;
+      }}>
+        <input type="number"ref={node => { input = node }} />
+        <input type="submit" />
+      </form>
 	  </div>
   )
 }
