@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
 	let input = 0;
 	return (
@@ -11,6 +9,10 @@ const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
 			<button onClick={() => onDecrement(id, 1)}>-</button>
 			<button onClick={() => onClear(id)}>clear</button>
 			<form onSubmit={function(e) {
+				e.preventDefault()
+        //if (!input.value.trim()) {
+          //return;
+        //}
         onIncrement(id, input.value)
         input.value = 0;
       }}>
