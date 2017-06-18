@@ -5,21 +5,26 @@ const initialState = {
     { id: 0, value: 0 }
   ]
 }
+//easy to understand
 const updateObject = (object, newValues) => {
   return Object.assign({}, object /*state*/, newValues/*value: 0*/);
 }
 
 const updateItems = (array, itemId, updateFunction) => {
-  const updated = array.map(item => {
+  const updated = array.map(item => { //array is counterList
     if(item.id !== itemId) {
-      return item;
+      return item; //change nothing if its not the counter to edit
     }
     const updated = updateFunction(item);
-    return updated
+    /* example updateFunction:
+      (counter) => {  //item is counter
+        return object.assign({}, counter, {value: counter.value + 1})
+      })
+    */
+    return updated //do this so the state is now updated
   });
   return updated;
 }
-
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -35,20 +40,22 @@ const reducer = (state = initialState, action) => {
         ]
        }
     case 'INCREMENT':
-      const updatedCounterList3 = updateItems(state.counterList, action.id, counter => {
+      const updatedCounterList = updateItems(state.counterList, action.id, counter => {
         return updateObject(counter, {value: counter.value + parseInt(action.value, 10)})
       })
-      return {counterList: updatedCounterList3}
+      return {counterList: updatedCounterList}
+
     case 'DECREMENT':
-      const updatedCounterList = updateItems(state.counterList, action.id, counter => {
+      const updatedCounterList2 = updateItems(state.counterList, action.id, counter => {
         return updateObject(counter, {value: counter.value - parseInt(action.value, 10)})
       })
-      return {counterList: updatedCounterList};
+      return {counterList: updatedCounterList2};
+
     case 'CLEAR':
-      const updatedCounterList2 = updateItems(state.counterList, action.id, counter => {
+      const updatedCounterList3 = updateItems(state.counterList, action.id, counter => {
         return updateObject(counter, {value: 0})
       })
-      return {counterList : updatedCounterList2};
+      return {counterList : updatedCounterList3};
 
     default:
       return state;
