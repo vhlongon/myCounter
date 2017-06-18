@@ -10,9 +10,7 @@ const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
 			<button onClick={() => onClear(id)}>clear</button>
 			<form onSubmit={function(e) {
 				e.preventDefault()
-        //if (!input.value.trim()) {
-          //return;
-        //}
+				//if()
         onIncrement(id, input.value)
         input.value = 0;
       }}>
