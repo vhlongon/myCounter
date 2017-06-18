@@ -6,7 +6,6 @@ const mapStateToProps = (state) => ({
   allValue: state.counters.counterList.reduce((value, counter) => value + counter.value, 0)
 })
 
-
 const mapDispatchToProps = (dispatch) => ({
   onNewToDo: () => dispatch({type: 'NEWCOUNTER'})
 })
