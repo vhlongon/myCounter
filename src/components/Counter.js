@@ -16,6 +16,12 @@ const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
       }}>
         <input type="number"ref={node => { input = node }} />
         <input type="submit" />
+				{
+					/*
+					  to change, add two inputs, one has a + and one has a -. So that
+					  you don't have to create a crazy function or disobey DRY
+				  */
+				}
       </form>
 	  </div>
   )
