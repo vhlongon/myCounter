@@ -10,18 +10,11 @@ const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
 			<button onClick={() => onClear(id)}>clear</button>
 			<form onSubmit={function(e) {
 				e.preventDefault()
-				//if()
-        onIncrement(id, input.value)
         input.value = 0;
       }}>
         <input type="number"ref={node => { input = node }} />
-        <input type="submit" />
-				{
-					/*
-					  to change, add two inputs, one has a + and one has a -. So that
-					  you don't have to create a crazy function or disobey DRY
-				  */
-				}
+        <input type="submit" value="increment" onClick={() => {return onIncrement(id, input.value)}}/>
+				<input type="submit" value="decrement" onClick={() => {return onDecrement(id, input.value)}}/>
       </form>
 	  </div>
   )
