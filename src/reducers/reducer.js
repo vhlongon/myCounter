@@ -6,7 +6,7 @@ const initialState = {
   ]
 }
 const updateObject = (object, newValues) => {
-  return Object.assign({}, object, newValues);
+  return Object.assign({}, object /*state*/, newValues/*value: 0*/);
 }
 
 const updateItems = (array, itemId, updateFunction) => {
