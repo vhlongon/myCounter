@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  onNewToDo: () => dispatch({type: 'NEWCOUNTER'}) //say to add a new todo, and use the id of the new todo
+  onNewToDo: () => dispatch({type: 'NEWCOUNTER'})
 })
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

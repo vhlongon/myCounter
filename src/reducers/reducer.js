@@ -25,6 +25,15 @@ const reducer = (state = initialState, action) => {
         ...state,
         counterList: state.counterList.map(counter => {
           if(counter.id === action.id) {
+            /* one for decrement too!
+            if(action.value !== undefined) {
+              return {
+                ...counter,
+                value: counter.value + action.value
+              }
+            }
+            else {}
+            */
             return {
               ...counter,
               value: counter.value + 1
