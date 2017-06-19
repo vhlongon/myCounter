@@ -34,7 +34,7 @@ const reducer = (state = initialState, action) => {
         counterList: [
           ...state.counterList,
           {
-            id: state.counterList.length,
+            id: (Math.random() * (0.120 - 0.0200) + 0.0200).toFixed(10),
             value: 0
           }
         ]
