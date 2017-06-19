@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onNewToDo: () => dispatch({type: 'NEWCOUNTER'})
+  onNewToDo: () => dispatch({type: 'NEWCOUNTER'}),
+  logOut: () => dispatch({type:'LOGOUT'})
 })
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

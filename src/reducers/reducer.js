@@ -2,18 +2,19 @@ import {combineReducers} from 'redux';
 //next feature, h1 stating total of all
 const initialState = {
   counterList: [
-    { id: 0, value: 0, active: true }
+    
   ]
 }
 //easy to understand
-const updateObject = (object, newValues) => {
-  return Object.assign({}, object /*state*/, newValues/*value: 0*/);
+const updateObject = (object, newValues) => { //DRY DESTROYER 2!
+  return Object.assign({}, object /* = state*/, newValues/*example: value: 0*/);
 }
 
 const updateItems = (array, itemId, updateFunction) => {
-  const updated = array.map(item => { //array is counterList
+  //DRY DESTROYER!
+  const updated = array.map(item => { //array is counterList always
     if(item.id !== itemId) {
-      return item; //change nothing if its not the counter to edit
+      return item; //change nothing if its not the counter The reducer wants to edit.
     }
     return updateFunction(item);
   });
@@ -22,6 +23,8 @@ const updateItems = (array, itemId, updateFunction) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'LOGOUT':
+      return state = initialState;
     case 'NEWCOUNTER':
       return {
         ...state,
@@ -36,6 +39,10 @@ const reducer = (state = initialState, action) => {
        }
     case 'INCREMENT':
       return {
+        /*
+        * should we make function to automate the function that we meant to automate something,
+        * it could automatically do everything but
+        */
         counterList: updateItems(state.counterList, action.id, (counter) => {
           return updateObject(counter, {value: counter.value + parseInt(action.value, 10)})
         })

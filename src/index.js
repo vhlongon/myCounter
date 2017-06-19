@@ -16,3 +16,4 @@ render(
 	</Provider>,
 	document.getElementById('root')
 );
+//to add: logout function, basically reset all.
