@@ -6,10 +6,8 @@ const App = ({counters, onNewToDo, allValue}) => {
   return (
     <div>
       <h1>{allValue}</h1>
-
       <button onClick={onNewToDo}>Add Counter</button>
-      {counters.counterList.map(counter =>
-
+      { counters.counterList.map(counter =>
         <CounterContainer key={counter.id} id={counter.id} value={counter.value} />
       )}
 
