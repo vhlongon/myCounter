@@ -35,27 +35,32 @@ const reducer = (state = initialState, action) => {
         ]
        }
     case 'INCREMENT':
-      const updatedCounterList = updateItems(state.counterList, action.id, counter => {
-        return updateObject(counter, {value: counter.value + parseInt(action.value, 10)})
-      })
-      return {counterList: updatedCounterList}
+      return {
+        counterList: updateItems(state.counterList, action.id, (counter) => {
+          return updateObject(counter, {value: counter.value + parseInt(action.value, 10)})
+        })
+      }
 
     case 'DECREMENT':
-      const updatedCounterList2 = updateItems(state.counterList, action.id, counter => {
-        return updateObject(counter, {value: counter.value - parseInt(action.value, 10)})
-      })
-      return {counterList: updatedCounterList2};
+      return {
+        counterList: updateItems(state.counterList, action.id, (counter) => {
+          return updateObject(counter, {value: counter.value - parseInt(action.value, 10)})
+        })
+      }
 
     case 'CLEAR':
-      const updatedCounterList3 = updateItems(state.counterList, action.id, counter => {
+     return {
+      counterList: updateItems(state.counterList, action.id, (counter) => {
         return updateObject(counter, {value: 0})
       })
-      return {counterList : updatedCounterList3};
+    }
+
     case 'DELETE':
-      const updatedCounterList4 = updateItems(state.counterList, action.id, counter => {
-        return updateObject(counter, {active: false, value: 0})//value must be 0 cause of h1
-      })
-      return {counterList : updatedCounterList4};
+      return {
+        counterList: updateItems(state.counterList, action.id, (counter) => {
+          return updateObject(counter, {active: false, value: 0})//value must be 0 cause of h1
+        })
+      }
     default:
       return state;
   }

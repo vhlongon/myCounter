@@ -11,7 +11,7 @@ const App = ({counters, onNewToDo, allValue}) => (
         if(counter.active) {
           return (<CounterContainer key={counter.id} id={counter.id} value={counter.value} />)
         }
-        //return counter;
+        return null;
       })
     }
   </div>
