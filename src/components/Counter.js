@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Counter = ({onIncrement, onDecrement, onClear, onDelete, id, value}) => {
-	let input = 0;
-
+  let input;
 	return (
 		<div className="counter">
 			<h2>{value}</h2>
