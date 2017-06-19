@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Counter = ({onIncrement, onDecrement, onClear, id, value}) => {
+const Counter = ({onIncrement, onDecrement, onClear, onDelete, id, value}) => {
 	let input = 0;
-	
+
 	return (
 		<div className="counter">
 			<h2>{value}</h2>
 			<button onClick={() => onIncrement(id, 1)}>+</button>
 			<button onClick={() => onDecrement(id, 1)}>-</button>
 			<button onClick={() => onClear(id)}>clear</button>
+			<button onClick={() => onDelete(id)}>Delete</button>
 			<form onSubmit={function(e) {
 				e.preventDefault()
         input.value = 0;

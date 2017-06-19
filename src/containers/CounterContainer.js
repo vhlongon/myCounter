@@ -6,7 +6,8 @@ import Counter from '../components/Counter';
   	return {
       onIncrement: (id, value) => dispatch({type: 'INCREMENT', id, value}),
       onDecrement: (id, value) => dispatch({type: 'DECREMENT', id, value}),
-      onClear: (id) => dispatch({type: 'CLEAR', id})
+      onClear: (id) => dispatch({type: 'CLEAR', id}),
+      onDelete: (id) => dispatch({type: 'DELETE', id})
     }
   }
 
