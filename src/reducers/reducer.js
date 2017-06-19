@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
+
 //next feature, h1 stating total of all
 const initialState = {
   counterList: [
-    
+
   ]
 }
 //easy to understand

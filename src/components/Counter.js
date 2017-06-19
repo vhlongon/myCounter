@@ -1,5 +1,6 @@
 import React from 'react';
-
+//sadly since I am not continuing from the todo example, I am unable to make cringy puns :P
+//example: dispatch(addTodo) //You must dispatch so the reducer knows what TODO
 const Counter = ({onIncrement, onDecrement, onClear, onDelete, id, value}) => {
   let input;
 	return (
