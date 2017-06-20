@@ -8,7 +8,7 @@ import AppContainer from './containers/AppContainer';
 const store = createStore(
    allReducers, /* preloadedState, */
    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
- );
+ );// redux devtools.
 
 render(
 	<Provider store={store}>

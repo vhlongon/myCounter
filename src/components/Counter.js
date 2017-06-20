@@ -10,7 +10,7 @@ const Counter = ({onIncrement, onDecrement, onClear, onDelete, id, value}) => {
 			<button onClick={() => onClear(id)}>clear</button>
 			<button onClick={() => onDelete(id)}>Delete</button>
 			<form onSubmit={function(e) {
-				e.preventDefault()
+				e.preventDefault() //so page is not refreshed and everything is not reset.
         input.value = 0;
       }}>
         <input type="number"ref={node => { input = node }} />

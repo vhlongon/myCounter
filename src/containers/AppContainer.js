@@ -4,6 +4,7 @@ import App from '../components/App';
 const mapStateToProps = (state) => ({
   counters: state.counters,
   allValue: state.counters.counterList.reduce((value, counter) => value + counter.value, 0)
+  //adds all of the values of the counters to this.
 })
 
 const mapDispatchToProps = (dispatch) => ({

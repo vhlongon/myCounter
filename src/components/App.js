@@ -11,8 +11,8 @@ const App = ({counters, onNewToDo, allValue, logOut}) => (
       counters.counterList.map(counter => {
         if(counter.active) {
           return (<CounterContainer key={counter.id} id={counter.id} value={counter.value} />)
-        }
-        return null;
+        } //must pass key to every component/container
+        return null; //dont render anything.
       })
     }
   </div>

@@ -10,6 +10,6 @@ import Counter from '../components/Counter';
     }
   }
 
-const CounterContainer = connect(null, mapDispatchToProps)(Counter);
+const CounterContainer = connect(null, mapDispatchToProps)(Counter); //gets state from appContainer
 
 export default CounterContainer;
