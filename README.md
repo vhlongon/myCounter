@@ -1,1 +1,2 @@
--App flow: someone do this :P
+This project is the FINAL source code of my tutorial(not published yet) that shows how to do many miscellaneous things, like higher order components, and writing functions to handle some of the reducer logic. While showcasing how to build upon an existing app, and immutable and functional javascript. However, the most important thing is that I teach how to respond to certain errors and how to know where your code is breaking.
+ 
