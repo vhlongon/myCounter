@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Counter from '../components/Counter';
 
-  //gives component function on how to dispatch
   const mapDispatchToProps = (dispatch) => {
   	return {
       onIncrement: (id, value) => dispatch({type: 'INCREMENT', id, value}),

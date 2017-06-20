@@ -15,7 +15,7 @@ const updateItems = (array, itemId, updateFunction) => {
   //DRY DESTROYER!
   const updated = array.map(item => { //array is counterList always
     if(item.id !== itemId) {
-      return item; //change nothing if its not the counter The reducer wants to edit.
+      return item;
     }
     return updateFunction(item);
   });
@@ -40,10 +40,6 @@ const reducer = (state = initialState, action) => {
        }
     case 'INCREMENT':
       return {
-        /*
-        * should we make function to automate the function that we meant to automate something,
-        * it could automatically do everything but
-        */
         counterList: updateItems(state.counterList, action.id, (counter) => {
           return updateObject(counter, {value: counter.value + parseInt(action.value, 10)})
         })

@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import allReducers from './reducers/reducer'; //must include full path i guess
+import allReducers from './reducers/reducer'; //must include full path.
 import AppContainer from './containers/AppContainer';
 
 const store = createStore(
