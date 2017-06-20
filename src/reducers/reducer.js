@@ -1,40 +1,39 @@
 import {combineReducers} from 'redux';
 
-//next feature, h1 stating total of all
 const initialState = {
   counterList: [
 
   ]
 }
-//easy to understand
+
 const updateObject = (object, newValues) => { //DRY DESTROYER 2!
-  return Object.assign({}, object /* = state*/, newValues/*example: value: 0*/);
+  return Object.assign({}, object /* always state*/, newValues);
 }
 
 const updateItems = (array, itemId, updateFunction) => {
   //DRY DESTROYER!
-  const updated = array.map(item => { //array is counterList always
+  const updated = array.map(item => { //array is always CounterList
     if(item.id !== itemId) {
       return item;
     }
-    return updateFunction(item);
+    return updateFunction(item); //this is the one we want to edit.
   });
-  return updated;
+  return updated; //this should now be the state.
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGOUT':
-      return state = initialState;
+      return state = initialState; //reset state
     case 'NEWCOUNTER':
       return {
         ...state,
         counterList: [
           ...state.counterList,
           {
-            id: (Math.random() * (0.120 - 0.0200) + 0.0200).toFixed(10),
+            id: (Math.random() * (0.120 - 0.0200) + 0.0200).toFixed(10), //random ten digit number.
             value: 0,
-            active: true
+            active: true //render it
           }
         ]
        }
@@ -72,7 +71,7 @@ const reducer = (state = initialState, action) => {
 
 
 const allReducers = combineReducers({
-  counters: reducer
+  counters: reducer //state.counters.counterList instead of state.reducer.counterList
 })
 
 export default allReducers;
